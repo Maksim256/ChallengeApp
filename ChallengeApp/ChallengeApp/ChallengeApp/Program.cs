@@ -1,4 +1,4 @@
-﻿int number = 4566;
+﻿int number = 4566; 
 string numberInString = number.ToString();
 char[] letters = numberInString.ToArray();
 int[] counter = new int[10];
@@ -37,11 +37,11 @@ foreach (char letter in letters)
     {
         counter[7]++;
     }
-    else if (letter == '7')
+    else if (letter == '8')
     {
         counter[8]++;
     }
-    else if (letter == '7')
+    else if (letter == '9')
     {
         counter[9]++;
     }
