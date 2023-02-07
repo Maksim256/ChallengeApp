@@ -1,8 +1,8 @@
 ﻿using System.Xml.Linq;
 
-string imie = "Andrzej";
+string imie = "Ewa";
 bool mezczyzna = false;
-int age = 29;
+int age = 31;
 
 Console.WriteLine("zmienna imie: " + imie);
 Console.WriteLine("zmienn plec, czy meżczyzna: " + mezczyzna);
@@ -20,22 +20,19 @@ if (mezczyzna == true)
     }
 
 }
-
-
-
 else
 {
-    if (age == 33 )
+    if (age == 33 && mezczyzna != true )
     {
-        Console.WriteLine("Ewa, lat 33 ");
+        Console.WriteLine(imie +", lat 33 ");
     }
     else if (age < 30 )
     {
         Console.WriteLine("Kobieta poniżej 30 lat");
     }
-    else if (age >= 30)
+    else 
     {
-        Console.WriteLine("Kobieta");
+        Console.WriteLine("Kobieta powyżej 30 lat");
     }
 
 }
