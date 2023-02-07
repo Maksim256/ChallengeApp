@@ -1,20 +1,53 @@
-﻿int[] grades = new int[51];
-//string[] dayOfWeeks = new string[7];
+﻿int number = 4566;
+string numberInString = number.ToString();
+char[] letters = numberInString.ToArray();
+int[] counter = new int[10];
 
-List<string> dayOfWeeks = new List<string>();
-dayOfWeeks.Add("poniedziałek");
-dayOfWeeks.Add("wtorek");
-dayOfWeeks.Add("środa");
-dayOfWeeks.Add("czwaretek");
-dayOfWeeks.Add("piątek");
-dayOfWeeks.Add("sobota");
-dayOfWeeks.Add("niedziela");
-
-//for(int i=0;i<dayOfWeeks.Count;i++)
-//{
-//    Console.WriteLine(dayOfWeeks[i]);
-//}
-foreach(var day in dayOfWeeks)
+foreach (char letter in letters)
 {
-    Console.WriteLine(day);
+    if (letter == '0')
+    {
+        counter[0]++;
+    }
+    else if (letter == '1')
+    {
+        counter[1]++;
+    }
+    else if (letter == '2')
+    {
+        counter[2]++;
+    }
+    else if (letter == '3')
+    {
+        counter[3]++;
+    }
+    else if (letter == '4')
+    {
+        counter[4]++;
+    }
+    else if (letter == '5')
+    {
+        counter[5]++;
+    }
+    else if (letter == '6')
+    {
+        counter[6]++;
+    }
+    else if (letter == '7')
+    {
+        counter[7]++;
+    }
+    else if (letter == '7')
+    {
+        counter[8]++;
+    }
+    else if (letter == '7')
+    {
+        counter[9]++;
+    }
+
+}
+for (int i = 0; i < 10; i++)
+{
+    Console.WriteLine("liczba" + i + " => " + counter[i]);
 }
