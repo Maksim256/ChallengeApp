@@ -1,53 +1,17 @@
-﻿int number = 4566; 
-string numberInString = number.ToString();
-char[] letters = numberInString.ToArray();
-int[] counter = new int[10];
+﻿using ChallengeApp;
 
-foreach (char letter in letters)
-{
-    if (letter == '0')
-    {
-        counter[0]++;
-    }
-    else if (letter == '1')
-    {
-        counter[1]++;
-    }
-    else if (letter == '2')
-    {
-        counter[2]++;
-    }
-    else if (letter == '3')
-    {
-        counter[3]++;
-    }
-    else if (letter == '4')
-    {
-        counter[4]++;
-    }
-    else if (letter == '5')
-    {
-        counter[5]++;
-    }
-    else if (letter == '6')
-    {
-        counter[6]++;
-    }
-    else if (letter == '7')
-    {
-        counter[7]++;
-    }
-    else if (letter == '8')
-    {
-        counter[8]++;
-    }
-    else if (letter == '9')
-    {
-        counter[9]++;
-    }
+User user1 = new User("Adam", "32423fddf");
+User user2 = new User("Monika", "32423fddf");
+User user3 = new User("Zuzia", "32423fddf");
+User user4 = new User("Damian", "32423fddf");
 
-}
-for (int i = 0; i < 10; i++)
-{
-    Console.WriteLine("liczba" + i + " => " + counter[i]);
-}
+
+
+user1.AddScore(5);
+user1.AddScore(2);
+var result = user1.Result;
+Console.WriteLine(result);
+var name1 = User.GameName;
+var pi = Math.PI;
+Console.WriteLine(pi);
+
