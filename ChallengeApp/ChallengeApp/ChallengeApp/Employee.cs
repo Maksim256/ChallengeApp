@@ -2,6 +2,7 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Security.Cryptography.X509Certificates;
+using ChallengeApp;
 
 namespace ChallengeApp
 {
@@ -12,7 +13,10 @@ namespace ChallengeApp
         //public int wiek;
         //public int punkty;
         private List<int> scoreA = new List<int>();
-  //   public List<Employee> employees = new List<Employee>();
+        // List<Employee> employees = new List<Employee>()
+        //{
+            
+        //};
 
         public Employee(string imie, string nazwisko, int wiek)
         {

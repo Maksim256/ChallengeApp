@@ -23,19 +23,39 @@ employee1.AddPunty(1);
 employee1.AddPunty(2);
 employee1.AddPunty(1);
 employee1.AddPunty(1);
-employee1.AddPunty(1);
+employee1.AddPunty(5);
 
 employee2.AddPunty(1);
 employee2.AddPunty(2);
+employee2.AddPunty(4);
 employee2.AddPunty(1);
-employee2.AddPunty(1);
-employee2.AddPunty(1);
+employee2.AddPunty(8);
 
 employee3.AddPunty(1);
 employee3.AddPunty(2);
+employee3.AddPunty(4);
 employee3.AddPunty(1);
 employee3.AddPunty(1);
-employee3.AddPunty(1);
+
+List<Employee> employees = new List<Employee>()
+{
+    employee1 ,employee2 ,employee3
+};
+
+// przykład wg podpowiedzi z lekcji
+int maxPunkty = -1;
+Employee employeeWithMaxResult = null;
+
+foreach(var employee in employees)
+{
+    if(employee.Wynik > maxPunkty)
+    {
+        employeeWithMaxResult = employee;
+        maxPunkty= employee.Wynik;
+    }
+   
+}
+Console.WriteLine("rekord z listy to:" + employeeWithMaxResult.Nazwisko+" Punktów: "+ employeeWithMaxResult.Wynik);
 
 //ten Login dostaje dostep do propercji o tej samej nazwie
 //user1.Login = "Marek";
@@ -58,20 +78,16 @@ else if(employee2.Wynik > employee1.Wynik && employee2.Wynik > employee3.Wynik)
     int rekord = employee2.Wynik;
     Console.WriteLine("punktów " + rekord + " "+"Zdobył: "+ employee2.Nazwisko);
 }
-
 else
 {
     int rekord = employee3.Wynik;
-    Console.WriteLine("punktów " + rekord+" "+ "Zdobył: "+ employee3.Nazwisko);
+    Console.WriteLine("najwięcej punktów " + rekord+" "+ "Zdobył: "+ employee3.Nazwisko);
 }
 //do zmiennej statycznej odwołujemy sie przez obiekt i nie musimy jej tworzyć
 var name1 = User.GameName;
 
-//Console.WriteLine(result);
-//Console.WriteLine(name1);
-
 
 Console.WriteLine(employee1.Imie + " " + employee1.Nazwisko + " Lat " + employee1.Wiek + " wynik "+ wynik1);
-Console.WriteLine(employee2.Imie + " " + employee2.Nazwisko + " " + employee2.Wiek + " " + " wynik " + wynik2);
-Console.WriteLine(employee3.Imie + " " + employee3.Nazwisko + " " + employee3.Wiek + " " + " wynik " + wynik3);
+Console.WriteLine(employee2.Imie + " " + employee2.Nazwisko + " Lat " + employee2.Wiek + " wynik " + wynik2);
+Console.WriteLine(employee3.Imie + " " + employee3.Nazwisko + " Lat " + employee3.Wiek + " wynik " + wynik3);
 
