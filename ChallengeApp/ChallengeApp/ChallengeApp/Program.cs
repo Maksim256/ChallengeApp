@@ -4,23 +4,23 @@ Employee employee1 = new Employee("Adam", "Adamowski", 30);
 Employee employee2 = new Employee("Ewa", "Ewowska", 18);
 Employee employee3 = new Employee("Kamil", "Kamilski", 48);
 
-employee1.AddPunty(1);
-employee1.AddPunty(2);
-employee1.AddPunty(1);
-employee1.AddPunty(1);
-employee1.AddPunty(5);
+employee1.AddScore(1);
+employee1.AddScore(2);
+employee1.AddScore(1);
+employee1.AddScore(1);
+employee1.AddScore(5);
 
-employee2.AddPunty(1);
-employee2.AddPunty(2);
-employee2.AddPunty(4);
-employee2.AddPunty(1);
-employee2.AddPunty(8);
+employee2.AddScore(1);
+employee2.AddScore(2);
+employee2.AddScore(4);
+employee2.AddScore(1);
+employee2.AddScore(8);
 
-employee3.AddPunty(1);
-employee3.AddPunty(2);
-employee3.AddPunty(4);
-employee3.AddPunty(1);
-employee3.AddPunty(1);
+employee3.AddScore(1);
+employee3.AddScore(2);
+employee3.AddScore(4);
+employee3.AddScore(1);
+employee3.AddScore(1);
 
 List<Employee> employees = new List<Employee>()
 {

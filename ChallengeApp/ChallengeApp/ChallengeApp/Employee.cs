@@ -14,6 +14,7 @@
         public string Imie { get; private set; }
         public string Nazwisko { get; private set; }
         public int Wiek { get; private set; }
+        
         public int Wynik
         {
             get
@@ -21,6 +22,7 @@
                 return this.scoreA.Sum();
             }
         }
+
         public int Maksimum
         {
             get
@@ -29,7 +31,7 @@
             }
         }
 
-        public void AddPunty(int numberA)
+        public void AddScore(int numberA)
         {
             this.scoreA.Add(numberA);
         }
