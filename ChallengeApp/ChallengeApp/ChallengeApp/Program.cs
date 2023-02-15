@@ -22,6 +22,8 @@ employee3.AddScore(4);
 employee3.AddScore(1);
 employee3.AddScore(1);
 
+employee1.SubstractScore(0);
+
 List<Employee> employees = new List<Employee>()
 {
     employee1 ,employee2 ,employee3
@@ -61,7 +63,7 @@ else
     int rekord = employee3.Wynik;
     Console.WriteLine("najwięcej punktów " + rekord+" "+ "Zdobył: "+ employee3.Nazwisko);
 }
-Console.WriteLine(employee1.Imie + " " + employee1.Nazwisko + " Lat " + employee1.Wiek + " wynik "+ wynik1);
-Console.WriteLine(employee2.Imie + " " + employee2.Nazwisko + " Lat " + employee2.Wiek + " wynik " + wynik2);
-Console.WriteLine(employee3.Imie + " " + employee3.Nazwisko + " Lat " + employee3.Wiek + " wynik " + wynik3);
+Console.WriteLine(employee1.Imie +  " Employe " + employee1.Nazwisko + " Lat " + employee1.Wiek + " wynik "+ wynik1);
+Console.WriteLine(employee2.Imie + " Employe " + employee2.Nazwisko + " Lat " + employee2.Wiek + " wynik " + wynik2);
+Console.WriteLine(employee3.Imie + " Employe " + employee3.Nazwisko + " Lat " + employee3.Wiek + " wynik " + wynik3);
 

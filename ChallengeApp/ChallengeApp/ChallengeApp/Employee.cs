@@ -1,4 +1,9 @@
-﻿namespace ChallengeApp
+﻿using Microsoft.VisualBasic;
+using System.Linq;
+using System.Security.Cryptography.X509Certificates;
+
+namespace ChallengeApp
+    
 {
     public class Employee
     {
@@ -34,6 +39,13 @@
         public void AddScore(int numberA)
         {
             this.scoreA.Add(numberA);
+          //  this.scoreA.Add(-1);
+        }
+        
+        public void SubstractScore(int numberA)
+        {
+            this.scoreA.Add(- numberA  );
+           
         }
     }
 }
