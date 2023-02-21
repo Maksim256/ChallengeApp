@@ -1,51 +1,43 @@
-﻿using Microsoft.VisualBasic;
-using System.Linq;
-using System.Security.Cryptography.X509Certificates;
-
-namespace ChallengeApp
-    
+﻿namespace ChallengeApp
 {
     public class Employee
     {
-        private List<int> scoreA = new List<int>();
+        private List<float> grades = new List<float>();
 
-        public Employee(string imie, string nazwisko, int wiek)
+        public Employee(string name, string surname)
         {
-            this.Imie = imie;
-            this.Nazwisko = nazwisko;
-            this.Wiek = wiek;
-        }
+            this.Name = name;
+            this.Surname = surname;
+        } 
 
-        public string Imie { get; private set; }
-        public string Nazwisko { get; private set; }
-        public int Wiek { get; private set; }
         
-        public int Wynik
-        {
-            get
-            {
-                return this.scoreA.Sum();
-            }
+
+        public string Name { get; private set; }
+        public string Surname { get; private set; }
+
+        public void AddGrade(float grade) 
+        {   
+            grades.Add(grade);
         }
 
-        public int Maksimum
+        public Statistics GetStatistics() 
         {
-            get
-            {
-                return this.scoreA.Max();
-            }
-        }
+            var statistics = new Statistics();
 
-        public void AddScore(int numberA)
-        {
-            this.scoreA.Add(numberA);
-          //  this.scoreA.Add(-1);
+            statistics.Average = 0;
+            statistics.Max = float.MinValue;
+            statistics.Min = float.MaxValue;
+
+            foreach (var grade in this.grades)
+            {
+                statistics.Max = Math.Max(statistics.Max, grade);
+                statistics.Min = Math.Min(statistics.Min, grade);
+                statistics.Average+= grade;
+            }
+
+            statistics.Average= statistics.Average/ this.grades.Count;
+            return statistics;
         }
         
-        public void SubstractScore(int numberA)
-        {
-            this.scoreA.Add(- numberA  );
-           
-        }
     }
 }
