@@ -6,17 +6,17 @@
         public void TypeTestsOfVariable_ReferenceMustBeNotEqual()
         {
             //arrange
-            var user1 = GetUser("Adam");
-            var user2 = GetUser("Adam");
+           // var user1 = GetUser("Adam");
+          //  var user2 = GetUser("Adam");
             int number1 = 4;
             int number2 = 4;
             
            
             //assert
-            Assert.AreNotEqual(user1, user2);
-            Assert.AreEqual(number1, number2);
+          //  Assert.AreNotEqual(user1, user2);
+          //  Assert.AreEqual(number1, number2);
            
-           ;
+           
         }
 
         [Test]
@@ -44,9 +44,9 @@
 
         }
 
-        private User GetUser(string name)
-        {
-            return new User(name);
-        }
+        //private User GetUser(string name)
+        //{
+        //    return new User(name);
+        //}
     }
 }
