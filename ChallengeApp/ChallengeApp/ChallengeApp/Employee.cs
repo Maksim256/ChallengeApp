@@ -31,6 +31,7 @@
 
         public void AddGrade(string grade)
         {
+
             if (float.TryParse(grade, out float result))
             {
                 this.AddGrade(result);
@@ -41,6 +42,11 @@
             }
         }
 
+        public void AddGrade(long grade)
+        {
+            float valueinfloat = grade;
+            this.AddGrade(valueinfloat);
+        }
 
         public Statistics GetStatistics()
         {
