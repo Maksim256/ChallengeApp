@@ -3,41 +3,51 @@
     public class EmployeTests
     {
         [Test]
-        public void TestMin_shouldBeMin()
+        public void WhenGetStatisticsCalled_ShouldReturnCurrentMin()
         {
             //arrange
             var employee = new Employee("Adam1", "Adamowski1");
             employee.AddGrade(2);
-            employee.AddGrade(4);
+            employee.AddGrade(2);
             employee.AddGrade(6);
-            var statistics = employee.GetStatistics();
-            
+
             //act
+            var statistics = employee.GetStatistics();
 
             //assert
             Assert.AreEqual(2, statistics.Min);
             
         }
         [Test]
-        public void TestMax_shouldBeMax() 
+        public void WhenGetStatisticsCalled_ShouldReturnCurrentMax() 
         {
+            //arrange
             var employee = new Employee("Adam1", "Adamowski1");
             employee.AddGrade(2);
-            employee.AddGrade(4);
+            employee.AddGrade(2);
             employee.AddGrade(6);
+
+            //act
             var statistics = employee.GetStatistics();
+            
+            //assert
             Assert.AreEqual(6, statistics.Max);
         
         }
         [Test]
-        public void TestAvg_SouldBeOK()
+        public void WhenGetStatisticsCalled_ShouldReturnCurrentAverage()
         {
+            //arrange
             var employee = new Employee("Adam1", "Adamowski1");
             employee.AddGrade(2);
-            employee.AddGrade(4);
+            employee.AddGrade(2);
             employee.AddGrade(6);
+
+            //act
             var statistics = employee.GetStatistics();
-            Assert.AreEqual(4, statistics.Average);
+
+            //assert
+            Assert.AreEqual(Math.Round(3.33, 2),Math.Round( statistics.Average, 2));
         }
 
 
