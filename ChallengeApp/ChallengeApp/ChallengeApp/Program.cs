@@ -4,21 +4,21 @@
 Console.WriteLine("Witamy w Programie XYZ do oceny Pracowników");
 Console.WriteLine("==============================================");
 Console.WriteLine();
-Console.WriteLine("Podaj ocenę Pracownika");
+Console.WriteLine("Podaj ocenę Pracownika z zakresu 1 - 100 lub A - E");
 
 var employee = new Employee();
 
 while(true)
 {
-    Console.WriteLine("Podaj kolejną ocenę pracownika: ");
+    Console.WriteLine("Podaj kolejną ocenę pracownika: aby zakończyć wprowadż q ");
         var input = Console.ReadLine();
     if(input == "q")
     { 
         break;
     }
-    employee.AddGrade(input);
+    
+        employee.AddGrade(input);
 }
-
 
 var statistics = employee.GetStatistics();
 Console.WriteLine($"AVG : {statistics.Average}");

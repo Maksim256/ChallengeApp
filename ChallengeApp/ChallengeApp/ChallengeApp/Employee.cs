@@ -14,7 +14,7 @@ namespace ChallengeApp
         }
 
         public Employee()
-        { 
+        {
 
         }
 
@@ -44,41 +44,37 @@ namespace ChallengeApp
             }
             else
             {
-                Console.WriteLine("String is not float");
+                Console.WriteLine("Dodano ocenę literową ");
+                switch (grade)
+                {
+                    case "A":
+                    case "a":
+                        this.grades.Add(100);
+                        break;
+                    case "B":
+                    case "b":
+                        this.grades.Add(80);
+                        break;
+                    case "C":
+                    case "c":
+                        this.grades.Add(60);
+                        break;
+                    case "D":
+                    case "d":
+                        this.grades.Add(40);
+                        break;
+                    case "E":
+                    case "e":
+                        this.grades.Add(20);
+                        break;
+                    default:
+                        Console.WriteLine("Podaj litere A - E, q aby zakończyć");
+                        break;
+                }
+
             }
         }
 
-        public void AddGrade(char grade)
-        {      
-            switch (grade) 
-            {
-                case 'A':
-                case 'a':
-                    this.grades.Add(100);
-                    break;
-                case 'B':
-                case 'b':
-                    this.grades.Add(80);
-                    break;
-                case 'C':
-                case 'c':
-                    this.grades.Add(60);
-                    break;
-                case 'D':
-                case 'd':
-                    this.grades.Add(40);
-                    break;
-                case 'E':
-                case 'e':
-                    this.grades.Add(20);
-                    break;
-                default:
-                    Console.WriteLine("Wrong letter");
-                    break;
-            }
-
-
-        }
         public void AddGrade(int grade)
         {
             float gradeAsFloat = grade;
@@ -99,9 +95,9 @@ namespace ChallengeApp
             statistics.Max = float.MinValue;
             statistics.Min = float.MaxValue;
 
-            
+
             foreach (var grade in this.grades)
-            {           
+            {
                 statistics.Max = Math.Max(statistics.Max, grade);
                 statistics.Min = Math.Min(statistics.Min, grade);
                 statistics.Average += grade;
@@ -109,7 +105,7 @@ namespace ChallengeApp
 
             statistics.Average = statistics.Average / this.grades.Count;
 
-            switch(statistics.Average)
+            switch (statistics.Average)
             {
                 case var average when average >= 80:
                     statistics.AverageLetter = 'A';
@@ -129,10 +125,6 @@ namespace ChallengeApp
             }
             return statistics;
         }
-
-
-        
     }
-
 }
 
