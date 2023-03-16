@@ -8,6 +8,24 @@ Console.WriteLine("Podaj ocenę Pracownika z zakresu 1 - 100 lub A - E");
 
 var employee = new Employee();
 
+//try
+//{
+//    Employee emp = null;
+
+//    var name = emp.Surname;
+
+//}
+//catch(Exception ex)
+//{
+//    Console.WriteLine(ex.Message);
+//}
+
+//finally
+//{
+//    Console.WriteLine("Finally here");
+//}
+
+
 while(true)
 {
     Console.WriteLine("Podaj kolejną ocenę pracownika: aby zakończyć wprowadż q ");
@@ -16,8 +34,15 @@ while(true)
     { 
         break;
     }
-    
+    try
+    {
         employee.AddGrade(input);
+    }
+    catch(Exception e) 
+    {        
+         Console.WriteLine($"Exception catched :  {e.Message}");
+    }
+        
 }
 
 var statistics = employee.GetStatistics();

@@ -5,12 +5,15 @@ namespace ChallengeApp
 {
     public class Employee
     {
+        private readonly char sex = 'M';
+
         private List<float> grades = new List<float>();
 
         public Employee(string name, string surname)
         {
             this.Name = name;
             this.Surname = surname;
+            this.sex = 'K';
         }
 
         public Employee()
@@ -31,7 +34,7 @@ namespace ChallengeApp
             }
             else
             {
-                Console.WriteLine("Invalid grade value");
+                throw new Exception("Invalid grade value");
             }
         }
 
@@ -44,7 +47,6 @@ namespace ChallengeApp
             }
             else
             {
-                Console.WriteLine("Dodano ocenę literową ");
                 switch (grade)
                 {
                     case "A":
@@ -68,8 +70,7 @@ namespace ChallengeApp
                         this.grades.Add(20);
                         break;
                     default:
-                        Console.WriteLine("Podaj litere A - E, q aby zakończyć");
-                        break;
+                        throw new Exception("Wrong Letter");
                 }
 
             }
