@@ -6,7 +6,9 @@ Console.WriteLine("==============================================");
 Console.WriteLine();
 Console.WriteLine("Podaj ocenę Pracownika z zakresu 1 - 100 lub A - E");
 
-var employee = new Employee();
+//var employee = new Employee("jajaj" , "jjj");
+
+var employee = new Employee("Kowalski");
 
 //try
 //{
