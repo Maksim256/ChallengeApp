@@ -8,25 +8,9 @@ Console.WriteLine("Podaj ocenę Pracownika z zakresu 1 - 100 lub A - E");
 
 //var employee = new Employee("jajaj" , "jjj");
 
-var employee = new Employee("Kowalski");
-
-//try
-//{
-//    Employee emp = null;
-
-//    var name = emp.Surname;
-
-//}
-//catch(Exception ex)
-//{
-//    Console.WriteLine(ex.Message);
-//}
-
-//finally
-//{
-//    Console.WriteLine("Finally here");
-//}
-
+//var employee = new Employee("Adam", "Kowalewski");
+var employee = new EmployeeInMemory("InAdam", "InKowalewski");
+employee.SayHello();
 
 while(true)
 {

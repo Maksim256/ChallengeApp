@@ -1,22 +1,28 @@
-﻿using System.ComponentModel.DataAnnotations;
-using System.Diagnostics;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace ChallengeApp
 {
-    public class Employee : IEmployee
+    public class EmployeeInMemory : EmployeeBase
     {
         private List<float> grades = new List<float>();
 
-        public Employee(string name, string surname)
-
+        public EmployeeInMemory(string name, string surname)
+            : base(name, surname)
         {
-            this.Name = name;
-            this.Surname = surname;
-        }
-        public string Name { get; private set; }
-        public string Surname { get; private set; }
 
-        public void AddGrade(float grade)
+        }
+
+        public override void SayHello()
+        {
+            Console.Write("Hi!!!");
+            base.SayHello();
+        }
+
+        public override void AddGrade(float grade)
         {
             int valueInInt = (int)grade;
 
@@ -30,7 +36,24 @@ namespace ChallengeApp
             }
         }
 
-        public void AddGrade(string grade)  // tu powinien byc char
+        public override void AddGrade(double grade)
+        {
+            float gradeAsFloat = (float)grade;
+            this.AddGrade(gradeAsFloat);
+        }
+
+        public override void AddGrade(int grade)
+        {
+            float gradeAsFloat = grade;
+            this.AddGrade(gradeAsFloat);
+        }
+
+        public override void AddGrade(char grade)
+        {
+            throw new NotImplementedException("to char grade");
+        }
+
+        public override void AddGrade(string grade)
         {
             if (float.TryParse(grade, out float result))
             {
@@ -66,38 +89,7 @@ namespace ChallengeApp
             }
         }
 
-        public void AddGrade(int grade)
-        {
-            float gradeAsFloat = grade;
-            this.AddGrade(gradeAsFloat);
-        }
-
-        public void AddGrade(double grade)
-        {
-            float gradeAsFloat = (float)grade;
-            this.AddGrade(gradeAsFloat);
-        }
-
-        public void AddGrade(char grade)
-        {
-            throw new NotImplementedException("to char grade");
-        }
-
-        //public void addgrade(string grade)
-        //{
-        //    if (float.TryParse(grade, out float result))
-        //    {
-        //        this.AddGrade(result);
-        //    }
-        //    else
-        //    {
-
-        //        throw new Exception("String is not float");
-        //    }
-        //}
-
-
-        public Statistics GetStatistics()
+        public override Statistics GetStatistics()
         {
             var statistics = new Statistics();
 
@@ -137,6 +129,3 @@ namespace ChallengeApp
         }
     }
 }
-
-
-
