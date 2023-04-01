@@ -16,11 +16,7 @@ namespace ChallengeApp
 
         }
 
-        public override void SayHello()
-        {
-            Console.Write("Hi!!!");
-            base.SayHello();
-        }
+        
 
         public override void AddGrade(float grade)
         {
