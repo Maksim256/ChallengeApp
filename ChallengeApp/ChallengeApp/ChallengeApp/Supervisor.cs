@@ -10,10 +10,13 @@ namespace ChallengeApp
     public class Supervisor : IEmployee
     {
         private List<float> grades = new List<float>();
+        public event EmployeeBase.GradeAddedDelegate GradeAdded;
 
         public string Name => "Adam";
 
         public string Surname => throw new NotImplementedException();
+
+       
 
         public void AddGrade(float grade)
         {

@@ -4,7 +4,11 @@ using System.Diagnostics;
 namespace ChallengeApp
 {
     public class Employee : IEmployee
+
     {
+
+        public event EmployeeBase.GradeAddedDelegate GradeAdded;
+
         private List<float> grades = new List<float>();
 
         public Employee(string name, string surname)
@@ -15,6 +19,8 @@ namespace ChallengeApp
         }
         public string Name { get; private set; }
         public string Surname { get; private set; }
+
+       
 
         public void AddGrade(float grade)
         {

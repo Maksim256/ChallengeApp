@@ -1,13 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace ChallengeApp
+﻿namespace ChallengeApp
 {
     public class EmployeeInMemory : EmployeeBase
     {
+       // public delegate void GradeAddedDelegate(object sender, EventArgs args);
+
+        public override event GradeAddedDelegate GradeAdded;
+
         private List<float> grades = new List<float>();
 
         public EmployeeInMemory(string name, string surname)
@@ -16,15 +14,16 @@ namespace ChallengeApp
 
         }
 
-        
-
         public override void AddGrade(float grade)
         {
-            int valueInInt = (int)grade;
-
             if (grade >= 0 && grade <= 100)
             {
                 this.grades.Add(grade);
+
+                if (GradeAdded != null)
+                {
+                    GradeAdded(this, new EventArgs());
+                }
             }
             else
             {
@@ -85,6 +84,7 @@ namespace ChallengeApp
             }
         }
 
+       
         public override Statistics GetStatistics()
         {
             var statistics = new Statistics();
