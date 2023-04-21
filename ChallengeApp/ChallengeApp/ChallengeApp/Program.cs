@@ -9,10 +9,10 @@ Console.WriteLine("Podaj ocenę Pracownika z zakresu 1 - 100 lub A - E");
 //var employee = new Employee("jajaj" , "jjj");
 
 // var employee = new Employee("Adam", "Kowalewski");
-// var employee = new EmployeeInFile("InAdam", "InKowalewski");
+ var employee = new EmployeeInFile("InAdam", "InKowalewski");
 
 
-var employee = new EmployeeInMemory("InAdam", "InKowalewski");
+//var employee = new EmployeeInMemory("InAdam", "InKowalewski");
 employee.GradeAdded += EmployeeGradeAdded;
 
 
@@ -25,7 +25,7 @@ void EmployeeGradeAdded(object sender, EventArgs args)
 //employee.AddGrade(1.67f);
 //employee.AddGrade(1.18f);
 //employee.AddGrade(1.15);
-employee.AddGrade(0.6f);
+//employee.AddGrade(0.6f);
 
 while (true)
 {
@@ -50,6 +50,7 @@ var statistics = employee.GetStatistics();
 Console.WriteLine($"AVG : {statistics.Average}");
 Console.WriteLine($"Min : {statistics.Min}");
 Console.WriteLine($"Max : {statistics.Max}");
+Console.WriteLine($"suma: {statistics.Sum}");
 
 
 
